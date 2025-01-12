@@ -1,0 +1,10 @@
+<div class="grid" *ngIf="products; else noProducts">
+  <ng-container *ngFor="let product of products">
+    <app-product [product]="product" (click)="viewProduct(product.id)" />
+  </ng-container>
+</div>
+
+<!-- No Products -->
+<ng-template #noProducts>
+  <p>No products to display.</p>
+</ng-template>

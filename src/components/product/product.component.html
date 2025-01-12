@@ -1,15 +1,13 @@
 <mat-card class="product wrapper">
-  <img mat-card-image [src]="product?.image" />
-  <mat-card-header class="header">
-    {{ product?.title }}
+  <div class="image-wrapper">
+    <img [src]="product.image" class="image" mat-card-md-image />
+  </div>
+  <mat-card-header class="header" mat-card-title>
+    {{ product.title }}
   </mat-card-header>
 
-  <mat-card-content>
-    <p class="description">{{ product?.description }}</p>
-  </mat-card-content>
-
-  <div class="botttom-content">
-    <p class="price">{{ product?.price }}</p>
-    <p class="category">{{ product?.category }}</p>
+  <div class="bottom-content">
+    <p class="price">{{ product.price | currency }}</p>
+    <a class="category" [href]="product.category">{{ product.category }}</a>
   </div>
 </mat-card>
