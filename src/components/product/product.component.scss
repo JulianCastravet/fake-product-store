@@ -1,7 +1,31 @@
 .product {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  background-color: #fff;
+
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header {
+    font-size: 15px;
+  }
+
+  .description {
+    padding: 10px;
+    color: #d3d3d3;
+  }
+
   .bottom-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 16px;
+
+    .price {
+      font-weight: 500;
+    }
   }
 }
