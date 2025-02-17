@@ -1,1 +1,19 @@
-<app-product-grid [products]="products"></app-product-grid>
+<!-- <app-product-grid [products]="products"></app-product-grid> -->
+ <section class="full-screen-section">
+  <h1>Welcome to the FakeStore!</h1>
+ </section>
+ <section class="most-rated-products">
+  <h2> Here are some of our most rated products:</h2>
+
+  <div class="product-container">
+
+    <div class="products-wrapper">     <ng-container *ngFor="let product of products">
+      <app-product [product]="product" (addProductToCart)="addToCart(product.id)"/>
+    </ng-container></div>
+
+    <div class="bottom-side">
+      <button class="view_more_btn" (click)="goToProductsPage()">View More</button>
+    </div>
+  </div>
+
+ </section>

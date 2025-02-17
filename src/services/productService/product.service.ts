@@ -14,4 +14,8 @@ export class ProductService {
   getProductById(id: number): Observable<Product> {
     return this.productAPI.getSingleProduct(id);
   }
+  
+  getMostRatedProducts(): Observable<Product[]>{
+    return this.productAPI.getMostRatedProducts();
+  }
 }

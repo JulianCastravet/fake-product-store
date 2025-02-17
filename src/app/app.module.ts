@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './pages/HomePage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SingleProductComponent } from './pages/single-product/single-product.component';
+import { NavBarComponent } from "../components/nav-bar/nav-bar.component";
 
 @NgModule({
   declarations: [AppComponent, SingleProductComponent],
@@ -16,8 +17,8 @@ import { SingleProductComponent } from './pages/single-product/single-product.co
     BrowserAnimationsModule,
     HomepageComponent,
     HttpClientModule,
-  ],
-  providers: [],
+    NavBarComponent,
+],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

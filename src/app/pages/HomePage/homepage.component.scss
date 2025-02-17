@@ -1,0 +1,61 @@
+.full-screen-section {
+  width: 100%;
+  height: 100vh;
+  overflow-x: none;
+  background: url("../../../assets/all_goods.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+  }
+  h1 {
+    z-index: 2;
+    color: white;
+    font-size: 120px;
+    
+  }
+}
+
+.most-rated-products {
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 70px;
+    margin-bottom: 20px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .products-wrapper {
+      margin: 40px 0;
+      display: flex;
+    }
+
+    .bottom-side {
+      display: flex;
+      justify-content: center;
+
+      .view_more_btn {
+        padding: 25px 55px;
+        background-color: #000000;
+        color: white;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+}

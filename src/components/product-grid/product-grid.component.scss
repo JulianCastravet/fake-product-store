@@ -1,6 +1,7 @@
 .grid {
-  display: grid;
   gap: 50px 100px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
   
-  grid-template-columns: auto auto auto;
 }

@@ -1,13 +1,26 @@
-<mat-card class="product wrapper">
-  <div class="image-wrapper">
-    <img [src]="product.image" class="image" mat-card-md-image />
-  </div>
-  <mat-card-header class="header" mat-card-title>
-    {{ product.title }}
-  </mat-card-header>
+<div class="product-wrapper" (click)="viewProduct(product.id)">
+  <div class="main-content">
+    <div class="img_wrapper">
+      <img [src]="product.image">
+    </div>
+    <div class="product-title">
+      {{product.title}}
+    </div>
+    <div class="product-description">
+      {{getShortedDescription(product.description)}}
+    </div>
+    <div class="product-price">
+      {{product.price | currency}}
+    </div>
+    <div class="product-rating">
+      <!-- create separate component -->
+       {{product.rating.rate}}
+    </div>
 
-  <div class="bottom-content">
-    <p class="price">{{ product.price | currency }}</p>
-    <a class="category" [href]="product.category">{{ product.category }}</a>
+
+
   </div>
-</mat-card>
+  <div class="product-actions">
+    <button (click)="addToCart($event)"> Add to Cart</button>
+  </div>
+</div>

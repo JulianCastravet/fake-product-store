@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/models/Product.model';
 import { ProductComponent } from '../product/product.component';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { ProductService } from 'src/services/productService/product.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-product-grid',
@@ -11,12 +12,24 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [ProductComponent, CommonModule],
 })
-export class ProductGridComponent {
-  @Input() products!: Product[];
+export class ProductGridComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  private readonly unsubscribe$ = new Subject<null>()
+  products: Product[] = [];
 
-  viewProduct(id: number) {
-    this.router.navigate(['/products', id]);
+  constructor(
+    private readonly productService: ProductService
+  ){}
+
+  ngOnInit(): void {
+    this.getAllProducts();
+  }
+
+  getAllProducts(){
+    this.productService.getAllProducts().pipe(takeUntil(this.unsubscribe$)).subscribe(products => this.products = products);
+  }
+
+  addItemToCart(id:number){
+    window.alert(id);
   }
 }

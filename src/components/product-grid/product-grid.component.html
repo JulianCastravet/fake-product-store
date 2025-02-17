@@ -1,6 +1,6 @@
 <div class="grid" *ngIf="products; else noProducts">
   <ng-container *ngFor="let product of products">
-    <app-product [product]="product" (click)="viewProduct(product.id)" />
+    <app-product [product]="product" (addProductToCart)="addItemToCart(product.id)" />
   </ng-container>
 </div>
 
